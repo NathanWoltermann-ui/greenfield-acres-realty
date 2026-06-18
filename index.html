@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Greenfield Acres Realty — Luxury Home Specialists of the High Country</title>
+  <meta name="description" content="Let us sell or help you find your dream home in the High Country. Aimee Greenfield, Certified Luxury Home Specialist — Sparta, Blowing Rock & Boone, NC." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== Preloader ===== -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__inner">
+      <svg class="preloader__mark" viewBox="0 0 64 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path class="preloader__path" d="M2 38 L20 8 L30 24 L38 12 L50 30 L62 38" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <p class="preloader__word">Greenfield&nbsp;Acres</p>
+      <p class="preloader__sub">High Country · North Carolina</p>
+    </div>
+  </div>
+
+  <!-- ===== Navigation ===== -->
+  <header class="nav" id="nav">
+    <a class="nav__brand" href="#top" aria-label="Greenfield Acres Realty — home">
+      <img class="nav__logo" src="assets/nav-logo.jpg" alt="Greenfield Acres Realty" />
+    </a>
+
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#listings">Listings</a>
+      <a href="#communities">Communities</a>
+      <a href="#about">About&nbsp;Aimee</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#team">Team</a>
+    </nav>
+
+    <div class="nav__cta-group">
+      <a class="nav__phone" href="tel:+13362233771">(336) 223-3771</a>
+      <a class="btn btn--small" href="#contact"><span>Work&nbsp;With&nbsp;Us</span></a>
+      <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== Mobile menu ===== -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <nav class="mobile-menu__links" aria-label="Mobile">
+      <a href="#listings">Listings</a>
+      <a href="#communities">Communities</a>
+      <a href="#about">About Aimee</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#team">Team</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="mobile-menu__foot">
+      <a href="tel:+13362233771">(336) 223-3771</a>
+      <a href="mailto:aimeegreenfield@yahoo.com">aimeegreenfield@yahoo.com</a>
+    </div>
+  </div>
+
+  <main id="top">
+
+    <!-- ===== Hero ===== -->
+    <section class="hero" id="hero">
+      <div class="hero__media" data-hero-media>
+        <img
+          src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=2400&auto=format&fit=crop"
+          alt="Layered blue ridges of the North Carolina High Country at misty sunrise"
+          fetchpriority="high" />
+        <div class="hero__veil"></div>
+        <div class="hero__mist"></div>
+      </div>
+
+      <div class="hero__content">
+        <p class="hero__eyebrow" data-hero-fade>
+          <span class="hero__eyebrow-line"></span>
+          Sparta · Blowing Rock · Boone — North Carolina
+        </p>
+        <h1 class="hero__title" data-hero-title>
+          <span class="line"><span>Find your place</span></span>
+          <span class="line"><span>in the <em>High&nbsp;Country.</em></span></span>
+        </h1>
+        <p class="hero__lede" data-hero-fade>
+          Luxury home specialists of the Blue Ridge Mountains. Let us sell — or
+          help you find — your dream home in the High Country.
+        </p>
+        <div class="hero__actions" data-hero-fade>
+          <a class="btn btn--solid" href="#listings"><span>View Featured Homes</span></a>
+          <a class="btn btn--ghost" href="#about"><span>Meet Aimee Greenfield</span></a>
+        </div>
+      </div>
+
+      <div class="hero__foot" data-hero-fade>
+        <div class="hero__stat">
+          <strong>5.0</strong>
+          <span>★★★★★ client rating</span>
+        </div>
+        <div class="hero__stat">
+          <strong>NC&nbsp;+&nbsp;VA</strong>
+          <span>Licensed broker, two states</span>
+        </div>
+        <div class="hero__stat">
+          <strong>CLHMS</strong>
+          <span>Certified Luxury Home Specialist</span>
+        </div>
+        <a class="hero__scroll" href="#marquee" aria-label="Scroll down">
+          <span class="hero__scroll-track"><span class="hero__scroll-dot"></span></span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ===== Marquee ===== -->
+    <section class="marquee" id="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Sparta</span><i>✦</i><span>Blowing Rock</span><i>✦</i><span>Boone</span><i>✦</i><span>West Jefferson</span><i>✦</i><span>Banner Elk</span><i>✦</i><span>Glade Valley</span><i>✦</i><span>Laurel Springs</span><i>✦</i><span>Roaring Gap</span><i>✦</i>
+        <span>Sparta</span><i>✦</i><span>Blowing Rock</span><i>✦</i><span>Boone</span><i>✦</i><span>West Jefferson</span><i>✦</i><span>Banner Elk</span><i>✦</i><span>Glade Valley</span><i>✦</i><span>Laurel Springs</span><i>✦</i><span>Roaring Gap</span><i>✦</i>
+      </div>
+    </section>
+
+    <!-- ===== Intro / Manifesto ===== -->
+    <section class="intro">
+      <div class="intro__inner">
+        <p class="intro__kicker" data-reveal>The Greenfield standard</p>
+        <h2 class="intro__statement" data-split>
+          Every client is our number one priority — with the marketing reach of a
+          luxury brokerage and the heart of a small mountain town.
+        </h2>
+        <div class="intro__meta">
+          <div class="intro__stat" data-reveal>
+            <strong><span data-count="45">0</span>+</strong>
+            <span>Five-star client reviews</span>
+          </div>
+          <div class="intro__stat" data-reveal>
+            <strong><span data-count="2">0</span></strong>
+            <span>States licensed — NC &amp; VA</span>
+          </div>
+          <div class="intro__stat" data-reveal>
+            <strong><span data-count="8">0</span>+</strong>
+            <span>High Country communities served</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Featured Listings (horizontal scroll) ===== -->
+    <section class="listings" id="listings">
+      <div class="listings__head">
+        <p class="section-kicker" data-reveal>Featured properties</p>
+        <h2 class="section-title" data-split>Homes worth the drive up the mountain.</h2>
+        <p class="listings__hint" data-reveal>Scroll&nbsp;→&nbsp;&nbsp;Featured listings — call <a href="tel:+13362233771">(336)&nbsp;223-3771</a> for pricing &amp; showings.</p>
+      </div>
+
+      <div class="listings__pin" data-listings-pin>
+        <div class="listings__track" data-listings-track>
+
+          <article class="card">
+            <div class="card__media">
+              <img loading="lazy" src="assets/listings/eagle-cliff-trail.jpg" alt="Timber mountain home with red metal roof at 745 Eagle Cliff Trail" />
+              <span class="card__tag">Mountain Lodge</span>
+            </div>
+            <div class="card__body">
+              <div class="card__top">
+                <h3>745 Eagle Cliff Trail</h3>
+              </div>
+              <p class="card__loc">Banner Elk, NC</p>
+              <p class="card__inquire"><a href="tel:+13362233771">Call for details →</a></p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__media">
+              <img loading="lazy" src="assets/listings/beacon-hill.jpg" alt="Shingle and stone estate at 260 Beacon Hill" />
+              <span class="card__tag">Estate</span>
+            </div>
+            <div class="card__body">
+              <div class="card__top">
+                <h3>260 Beacon Hill</h3>
+              </div>
+              <p class="card__loc">Blowing Rock, NC</p>
+              <p class="card__inquire"><a href="tel:+13362233771">Call for details →</a></p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__media">
+              <img loading="lazy" src="assets/listings/stonecrop-lane.jpg" alt="Timber-frame home with long-range mountain views at 153 Stonecrop Lane" />
+              <span class="card__tag">Timber Frame</span>
+            </div>
+            <div class="card__body">
+              <div class="card__top">
+                <h3>153 Stonecrop Lane</h3>
+              </div>
+              <p class="card__loc">Boone, NC</p>
+              <p class="card__inquire"><a href="tel:+13362233771">Call for details →</a></p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__media">
+              <img loading="lazy" src="assets/listings/bryan-hollow-road.jpg" alt="Large log home at 904 Bryan Hollow Road" />
+              <span class="card__tag">Log Home</span>
+            </div>
+            <div class="card__body">
+              <div class="card__top">
+                <h3>904 Bryan Hollow Road</h3>
+              </div>
+              <p class="card__loc">Boone, NC</p>
+              <p class="card__inquire"><a href="tel:+13362233771">Call for details →</a></p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__media">
+              <img loading="lazy" src="assets/listings/howards-knob-road.jpg" alt="Stone manor home with mountain view at 530 Howards Knob Road" />
+              <span class="card__tag">Stone Manor</span>
+            </div>
+            <div class="card__body">
+              <div class="card__top">
+                <h3>530 Howards Knob Rd.</h3>
+              </div>
+              <p class="card__loc">Boone, NC</p>
+              <p class="card__inquire"><a href="tel:+13362233771">Call for details →</a></p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__media">
+              <img loading="lazy" src="assets/listings/joriann-drive.jpg" alt="Stone farmhouse with fenced pasture at 199 Joriann Drive" />
+              <span class="card__tag">Farm &amp; Acreage</span>
+            </div>
+            <div class="card__body">
+              <div class="card__top">
+                <h3>199 Joriann Drive</h3>
+              </div>
+              <p class="card__loc">Crumpler, NC</p>
+              <p class="card__inquire"><a href="tel:+13362233771">Call for details →</a></p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__media">
+              <img loading="lazy" src="assets/listings/blackberry-lane.jpg" alt="Craftsman home with stone landscaping at 119 Blackberry Lane" />
+              <span class="card__tag">Craftsman</span>
+            </div>
+            <div class="card__body">
+              <div class="card__top">
+                <h3>119 Blackberry Lane</h3>
+              </div>
+              <p class="card__loc">Boone, NC</p>
+              <p class="card__inquire"><a href="tel:+13362233771">Call for details →</a></p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__media">
+              <img loading="lazy" src="assets/listings/glade-valley-road.jpg" alt="Ranch home with Blue Ridge backdrop at 438 Glade Valley Road" />
+              <span class="card__tag">Ranch &amp; Views</span>
+            </div>
+            <div class="card__body">
+              <div class="card__top">
+                <h3>438 Glade Valley Road</h3>
+              </div>
+              <p class="card__loc">Glade Valley, NC</p>
+              <p class="card__inquire"><a href="tel:+13362233771">Call for details →</a></p>
+            </div>
+          </article>
+
+          <article class="card card--cta">
+            <div class="card--cta__inner">
+              <h3>Looking for land, a farm, or something off-market?</h3>
+              <p>Aimee’s network across Alleghany, Ashe &amp; Watauga counties surfaces properties before they hit the MLS.</p>
+              <a class="btn btn--solid" href="#contact"><span>Start Your Search</span></a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Communities ===== -->
+    <section class="communities" id="communities">
+      <div class="communities__head">
+        <p class="section-kicker" data-reveal>Where we work</p>
+        <h2 class="section-title" data-split>Three towns. One backyard: the Blue&nbsp;Ridge.</h2>
+      </div>
+      <div class="communities__grid">
+        <a class="place" href="#contact" data-reveal-img>
+          <div class="place__media">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1600&auto=format&fit=crop" alt="Golden pasture and country road near Sparta" />
+          </div>
+          <div class="place__body">
+            <span class="place__num">01</span>
+            <h3>Sparta</h3>
+            <p>The quiet heart of Alleghany County — Christmas-tree farms, the New River, and our home office on US-21.</p>
+            <span class="place__link">Explore Sparta →</span>
+          </div>
+        </a>
+        <a class="place" href="#contact" data-reveal-img>
+          <div class="place__media">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1600&auto=format&fit=crop" alt="Sunbeams over green Blue Ridge valley at Blowing Rock" />
+          </div>
+          <div class="place__body">
+            <span class="place__num">02</span>
+            <h3>Blowing Rock</h3>
+            <p>The crown of the Blue Ridge Parkway — storybook village charm with the High Country’s finest estates.</p>
+            <span class="place__link">Explore Blowing Rock →</span>
+          </div>
+        </a>
+        <a class="place" href="#contact" data-reveal-img>
+          <div class="place__media">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1600&auto=format&fit=crop" alt="Sunlight through tall forest near Boone" />
+          </div>
+          <div class="place__body">
+            <span class="place__num">03</span>
+            <h3>Boone</h3>
+            <p>The hub of the High Country — college-town energy, four-season trails, and strong investment demand.</p>
+            <span class="place__link">Explore Boone →</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ===== About Aimee ===== -->
+    <section class="about" id="about">
+      <div class="about__media" data-reveal-img data-parallax>
+        <img loading="lazy" src="https://images.unsplash.com/photo-1486520299386-6d106b22014b?q=80&w=1600&auto=format&fit=crop" alt="Layered misty Blue Ridge mountain ridgelines" />
+        <figcaption class="about__caption">The Blue Ridge Mountains — home since day one of Greenfield Acres.</figcaption>
+        <figure class="about__portrait" data-reveal>
+          <img src="assets/aimee.jpg" alt="Aimee Greenfield, Owner and Broker-in-Charge" />
+          <figcaption>Aimee Greenfield</figcaption>
+        </figure>
+      </div>
+      <div class="about__body">
+        <p class="section-kicker" data-reveal>Owner &amp; Broker-in-Charge</p>
+        <h2 class="section-title" data-split>Aimee Greenfield sees homes the way she once drew them.</h2>
+        <p class="about__text" data-reveal>
+          Before real estate, Aimee’s world was <em>interior design and architecture</em> —
+          a trained eye she now puts to work pricing, staging, and marketing every
+          property she represents. After living in Ohio, California, and Montana,
+          she settled in the Blue Ridge Mountains of North Carolina and built
+          Greenfield Acres Realty around one idea: with this much time dedicated
+          to each client, <em>you always feel like the number one priority.</em>
+        </p>
+        <ul class="about__creds">
+          <li data-reveal><strong>CLHMS</strong><span>Certified Luxury Home Marketing Specialist</span></li>
+          <li data-reveal><strong>BIC — NC &amp; VA</strong><span>Broker-in-Charge, licensed in two states</span></li>
+          <li data-reveal><strong>Millionaires Club</strong><span>Top-producing sales recognition</span></li>
+          <li data-reveal><strong>Chambers of Commerce</strong><span>Alleghany &amp; Blowing Rock member</span></li>
+        </ul>
+        <div class="about__seals" data-reveal>
+          <img src="assets/seal-member.jpg" alt="Institute for Luxury Home Marketing — Member" loading="lazy" />
+          <img src="assets/seal-clhms.jpg" alt="Certified Luxury Home Marketing Specialist seal" loading="lazy" />
+          <img src="assets/seal-guild.jpg" alt="CLHMS Guild seal" loading="lazy" />
+        </div>
+        <div class="about__actions" data-reveal>
+          <a class="btn btn--solid" href="tel:+13364667727"><span>Call Aimee — 336-466-7727</span></a>
+          <a class="btn btn--ghost" href="mailto:aimeegreenfield@yahoo.com"><span>Email Aimee</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Affiliations ===== -->
+    <section class="affiliations" aria-label="Memberships and recognition">
+      <p class="section-kicker" data-reveal>Memberships &amp; recognition</p>
+      <div class="affiliations__row" data-reveal>
+        <img src="assets/badge-realtor-mls.jpg" alt="REALTOR® — Multiple Listing Service member" loading="lazy" />
+        <img src="assets/badge-zillow.jpg" alt="Zillow Premier Agent" loading="lazy" />
+        <img src="assets/badge-homelight.jpg" alt="HomeLight Sells For More 2018 award" loading="lazy" />
+        <img src="assets/badge-chamber-alleghany.jpg" alt="Member, Alleghany County Chamber of Commerce" loading="lazy" />
+        <img src="assets/badge-chamber-blowingrock.jpg" alt="Member, Blowing Rock Chamber of Commerce" loading="lazy" />
+        <img src="assets/badge-equal-housing.jpg" alt="Equal Housing Opportunity" loading="lazy" />
+      </div>
+    </section>
+
+    <!-- ===== Reviews ===== -->
+    <section class="reviews" id="reviews">
+      <div class="reviews__head">
+        <p class="section-kicker section-kicker--light" data-reveal>In their words</p>
+        <h2 class="section-title section-title--light" data-split>A continual five-star rating, one family at a time.</h2>
+      </div>
+
+      <div class="reviews__stage">
+        <div class="reviews__quote-mark" aria-hidden="true">“</div>
+        <div class="reviews__slides" data-reviews>
+          <blockquote class="review is-active">
+            <p>I highly recommend Aimee Greenfield. She sold my home when others could not.</p>
+            <footer>— W.&nbsp;Sykes · Glade Valley, NC</footer>
+          </blockquote>
+          <blockquote class="review">
+            <p>Aimee guided us through every step. Her negotiation skills are off the chart.</p>
+            <footer>— Rich · Laurel Springs, NC</footer>
+          </blockquote>
+          <blockquote class="review">
+            <p>Aimee is the best! She helped us find the home we were looking for — from 800 miles away.</p>
+            <footer>— R.D. · Laurel Springs, NC</footer>
+          </blockquote>
+          <blockquote class="review">
+            <p>The consummate real estate broker — her professionalism is outstanding.</p>
+            <footer>— Steven B. · Sparta, NC</footer>
+          </blockquote>
+          <blockquote class="review">
+            <p>We have never worked with an agent as professional and friendly as you.</p>
+            <footer>— Steve &amp; Denise Stefano · Boone, NC</footer>
+          </blockquote>
+          <blockquote class="review">
+            <p>Aimee did a wonderful job helping us find the perfect log cabin in the mountains.</p>
+            <footer>— M.&nbsp;Ochoa · Glade Valley, NC</footer>
+          </blockquote>
+        </div>
+
+        <div class="reviews__controls">
+          <button class="reviews__arrow" data-review-prev aria-label="Previous review">←</button>
+          <div class="reviews__dots" data-review-dots></div>
+          <button class="reviews__arrow" data-review-next aria-label="Next review">→</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Team ===== -->
+    <section class="team" id="team">
+      <div class="team__head">
+        <p class="section-kicker" data-reveal>The people behind the porch lights</p>
+        <h2 class="section-title" data-split>A small team that moves mountains.</h2>
+      </div>
+      <div class="team__grid">
+        <article class="member" data-reveal>
+          <div class="member__monogram">AG</div>
+          <h3>Aimee Greenfield</h3>
+          <p class="member__role">Owner · Broker-in-Charge, NC &amp; VA</p>
+          <p class="member__bio">Certified Luxury Home Specialist with a background in interior design &amp; architecture.</p>
+          <div class="member__contact">
+            <a href="tel:+13364667727">336-466-7727</a>
+            <a href="mailto:aimeegreenfield@yahoo.com">Email</a>
+          </div>
+        </article>
+        <article class="member" data-reveal>
+          <div class="member__monogram">DC</div>
+          <h3>David Collings</h3>
+          <p class="member__role">NC Real Estate Broker · Premier Zillow Agent</p>
+          <p class="member__bio">Nearly a decade in NC real estate; former GE Healthcare design engineering leader.</p>
+          <div class="member__contact">
+            <a href="tel:+13307148358">330-714-8358</a>
+            <a href="mailto:dpccollings@gmail.com">Email</a>
+          </div>
+        </article>
+        <article class="member" data-reveal>
+          <div class="member__monogram">MC</div>
+          <h3>Marilyn Collings</h3>
+          <p class="member__role">Office Manager</p>
+          <p class="member__bio">30+ years in HR and client service — the steady hand that keeps every closing on track.</p>
+          <div class="member__contact">
+            <a href="tel:+13307142838">330-714-2838</a>
+          </div>
+        </article>
+        <article class="member" data-reveal>
+          <div class="member__monogram">AA</div>
+          <h3>Andrew Aaron</h3>
+          <p class="member__role">Premier Lender</p>
+          <p class="member__bio">Trusted financing partner for buyers across the High Country.</p>
+          <div class="member__contact">
+            <a href="tel:+18284463971">828-446-3971</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== Contact ===== -->
+    <section class="contact" id="contact">
+      <div class="contact__topo" aria-hidden="true">
+        <svg viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <g fill="none" stroke="currentColor" stroke-width="1">
+            <path d="M-50 520 C 200 420, 380 560, 640 480 S 1100 520, 1260 430"/>
+            <path d="M-50 470 C 220 370, 400 510, 660 430 S 1080 470, 1260 380"/>
+            <path d="M-50 420 C 240 320, 420 460, 680 380 S 1060 420, 1260 330"/>
+            <path d="M-50 370 C 260 270, 440 410, 700 330 S 1040 370, 1260 280"/>
+            <path d="M-50 320 C 280 220, 460 360, 720 280 S 1020 320, 1260 230"/>
+            <path d="M-50 270 C 300 170, 480 310, 740 230 S 1000 270, 1260 180"/>
+          </g>
+        </svg>
+      </div>
+
+      <div class="contact__inner">
+        <div class="contact__info">
+          <p class="section-kicker section-kicker--light" data-reveal>Visit, call, or write</p>
+          <h2 class="section-title section-title--light" data-split>The kettle’s on at the Sparta office.</h2>
+          <ul class="contact__list">
+            <li data-reveal>
+              <span>Office</span>
+              <p>1635 US Hwy 21 South<br/>Sparta, NC 28675</p>
+            </li>
+            <li data-reveal>
+              <span>Hours</span>
+              <p>Mon – Sat · 9:00 am – 5:30 pm<br/>Sunday by appointment</p>
+            </li>
+            <li data-reveal>
+              <span>Phone</span>
+              <p><a href="tel:+13362233771">(336) 223-3771</a> office<br/><a href="tel:+13364667727">336-466-7727</a> Aimee direct</p>
+            </li>
+            <li data-reveal>
+              <span>Email</span>
+              <p><a href="mailto:greenfieldacresrealty@gmail.com">greenfieldacresrealty@gmail.com</a></p>
+            </li>
+          </ul>
+          <figure class="contact__office" data-reveal>
+            <img src="assets/office.jpg" alt="The Greenfield Acres Realty log-cabin office on US-21 in Sparta" loading="lazy" />
+            <figcaption>Our cabin on US-21 — come on up, the porch light’s on.</figcaption>
+          </figure>
+        </div>
+
+        <form class="contact__form" data-reveal action="mailto:greenfieldacresrealty@gmail.com" method="get">
+          <h3>Tell us what you’re dreaming of</h3>
+          <div class="field">
+            <label for="f-name">Name</label>
+            <input id="f-name" name="name" type="text" placeholder="Your name" required />
+          </div>
+          <div class="field">
+            <label for="f-contact">Phone or email</label>
+            <input id="f-contact" name="contact" type="text" placeholder="How can we reach you?" required />
+          </div>
+          <div class="field">
+            <label for="f-msg">Message</label>
+            <textarea id="f-msg" name="body" rows="4" placeholder="Buying, selling, land, cabins — tell us everything."></textarea>
+          </div>
+          <button class="btn btn--brass" type="submit"><span>Send Message</span></button>
+          <p class="contact__form-note">Prefer to talk? Aimee usually answers within minutes.</p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="footer__top">
+      <a class="footer__brand" href="#top" aria-label="Greenfield Acres Realty — back to top">
+        <img src="assets/logo.jpg" alt="Greenfield Acres Realty — Where the grass is always green — 336-223-3771" loading="lazy" />
+      </a>
+      <nav class="footer__links" aria-label="Footer">
+        <a href="#listings">Listings</a>
+        <a href="#communities">Communities</a>
+        <a href="#about">About</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="footer__social">
+        <a href="https://www.facebook.com/" aria-label="Facebook">Fb</a>
+        <a href="https://www.instagram.com/" aria-label="Instagram">Ig</a>
+        <a href="https://www.linkedin.com/" aria-label="LinkedIn">In</a>
+        <a href="https://www.yelp.com/" aria-label="Yelp">Yp</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© <span id="year"></span> Greenfield Acres Realty · <em>“Where the grass is always green”</em> · Member, Alleghany &amp; Blowing Rock Chambers of Commerce</p>
+      <p class="footer__legal">Licensed in North Carolina &amp; Virginia · Equal Housing Opportunity ⌂</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
