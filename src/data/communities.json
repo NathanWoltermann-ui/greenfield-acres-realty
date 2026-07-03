@@ -1,0 +1,288 @@
+[
+  {
+    "slug": "sparta",
+    "name": "Sparta",
+    "county": "Alleghany",
+    "cityId": 44011,
+    "idx": "https://greenfieldacresrealty.idxbroker.com/i/sparta-all-homes",
+    "oldUrl": "/sparta%20all.htm",
+    "image": "/assets/communities/sparta.jpg",
+    "alt": "Welcome to Sparta, N.C. stone sign",
+    "tagline": "The quiet heart of Alleghany County — Christmas-tree farms, the New River, and our home office on US-21.",
+    "facts": {
+      "elevation": "≈2,940 ft",
+      "knownFor": "Music on Main · New River",
+      "drive": "90 min from Winston-Salem"
+    },
+    "paragraphs": [
+      "Sparta is the county seat of Alleghany County and the town Greenfield Acres Realty calls home. Set just off the Blue Ridge Parkway near Milepost 229, it pairs a walkable Main Street — galleries, the Alleghany Jubilee dance hall, Muddy Creek Café, Laconia Ale Works — with some of the most affordable mountain land in the High Country.",
+      "Buyers here find rolling Christmas-tree farms, long-range pasture views, and frontage on the ancient New River. It's the kind of town where the unofficial motto is 'what happens in Sparta gets home before you do' — and where your broker is also your neighbor."
+    ],
+    "lat": 36.5057,
+    "lng": -81.1209
+  },
+  {
+    "slug": "blowing-rock",
+    "name": "Blowing Rock",
+    "county": "Watauga",
+    "cityId": 4531,
+    "idx": "https://greenfieldacresrealty.idxbroker.com/i/blowing-rock-all-properties",
+    "oldUrl": "/br%20all.htm",
+    "image": "/assets/communities/blowing-rock.jpg",
+    "alt": "Welcome to Blowing Rock sign with spring tulips",
+    "tagline": "The crown of the Blue Ridge Parkway — storybook village charm with the High Country's finest estates.",
+    "facts": {
+      "elevation": "≈3,566 ft",
+      "knownFor": "Moses Cone Manor · Main Street",
+      "drive": "2 hrs from Charlotte"
+    },
+    "paragraphs": [
+      "Blowing Rock is the storybook village of the Blue Ridge — a Main Street of boutiques, inns, and restaurants that has drawn visitors for more than a century, wrapped by the carriage trails of Moses Cone and Julian Price parks.",
+      "It is also the High Country's premier luxury market. Gated golf communities, historic summer estates, and long-range-view homes here command the region's top prices, and marketing them well is exactly what Aimee's CLHMS GUILD designation is for."
+    ],
+    "lat": 36.1354,
+    "lng": -81.6776
+  },
+  {
+    "slug": "boone",
+    "name": "Boone",
+    "county": "Watauga",
+    "cityId": 4970,
+    "idx": "https://greenfieldacresrealty.idxbroker.com/i/boone---all-homes",
+    "oldUrl": "/boone%20all.htm",
+    "image": "/assets/communities/boone.jpg",
+    "alt": "Autumn color over King Street in downtown Boone",
+    "tagline": "The hub of the High Country — college-town energy, four-season trails, and strong investment demand.",
+    "facts": {
+      "elevation": "≈3,333 ft",
+      "knownFor": "App State · King Street",
+      "drive": "2 hrs from Charlotte"
+    },
+    "paragraphs": [
+      "Boone is the beating heart of the High Country: home to Appalachian State University, a lively King Street of shops and restaurants, and the region's hospitals, schools, and services.",
+      "That mix keeps demand strong year-round — from primary homes and mountain retreats to some of the strongest short-term-rental and investment fundamentals in western North Carolina."
+    ],
+    "lat": 36.2168,
+    "lng": -81.6746
+  },
+  {
+    "slug": "banner-elk",
+    "name": "Banner Elk",
+    "county": "Avery",
+    "cityId": 2514,
+    "idx": "https://greenfieldacresrealty.idxbroker.com/i/banner-elk-all-homes",
+    "oldUrl": "/banner%20elk%20all-a.htm",
+    "image": "/assets/communities/banner-elk.jpg",
+    "alt": "Welcome to Banner Elk sign with autumn pumpkins and mums",
+    "tagline": "The ski capital of the South — a 3,700-foot valley town ringed by gated mountain communities.",
+    "facts": {
+      "elevation": "≈3,701 ft",
+      "knownFor": "Ski slopes · Lees-McRae College",
+      "drive": "20 min from Boone"
+    },
+    "paragraphs": [
+      "Banner Elk sits in the center of the High Country at 3,700 feet — the ski capital of the South, tucked between Sugar Mountain and Beech Mountain resorts. It's the destination for thousands who love the outdoors and southern mountain culture.",
+      "Many of the region's finest gated communities — Diamond Creek, Eagles Nest, The Lodges at Eagles Nest among them — are nestled in Banner Elk's countryside, making it a cornerstone of the High Country luxury market."
+    ],
+    "lat": 36.1632,
+    "lng": -81.8715
+  },
+  {
+    "slug": "beech-mountain",
+    "name": "Beech Mountain",
+    "county": "Avery / Watauga",
+    "cityId": 3263,
+    "idx": "https://greenfieldacresrealty.idxbroker.com/idx/results/listings?pt=1&ccz=city&city[]=3263&srt=prd",
+    "oldUrl": "/beech%20mnt%20all.htm",
+    "image": "/assets/communities/beech-mountain.jpg",
+    "alt": "Welcome to Beech Mountain sign at the resort village",
+    "tagline": "Eastern America's highest town — ski-in living at 5,506 feet.",
+    "facts": {
+      "elevation": "5,506 ft",
+      "knownFor": "Highest town in the East · Ski resort",
+      "drive": "30 min from Boone"
+    },
+    "paragraphs": [
+      "At 5,506 feet, Beech Mountain is the highest incorporated town in eastern America — a four-season resort community where summer temperatures rarely leave the 70s and winter delivers real, reliable snow.",
+      "Homes here range from classic A-frame ski chalets to view estates above the clouds. For buyers wanting cool summers, ski access, and rental potential in one address, Beech is hard to beat."
+    ],
+    "lat": 36.1932,
+    "lng": -81.8843
+  },
+  {
+    "slug": "jefferson",
+    "name": "Jefferson",
+    "county": "Ashe",
+    "cityId": 23215,
+    "idx": "https://greenfieldacresrealty.idxbroker.com/i/jefferson-all-homes",
+    "oldUrl": "/jefferson%20all.htm",
+    "image": "/assets/communities/jefferson.jpg",
+    "alt": "Sunbeams and rhododendron on the ridge above Jefferson",
+    "tagline": "Ashe County's seat, in the shadow of Mount Jefferson.",
+    "facts": {
+      "elevation": "≈2,900 ft",
+      "knownFor": "Mount Jefferson State Natural Area",
+      "drive": "30 min from Boone"
+    },
+    "paragraphs": [
+      "Jefferson is the county seat of Ashe County, sitting literally in the shadow of Mount Jefferson State Natural Area — 4,683 feet of protected summit trails rising straight from town.",
+      "It offers some of the High Country's best value: established neighborhoods, farmland, and view lots within minutes of West Jefferson's arts district and the New River."
+    ],
+    "lat": 36.4204,
+    "lng": -81.4737
+  },
+  {
+    "slug": "west-jefferson",
+    "name": "West Jefferson",
+    "county": "Ashe",
+    "cityId": 50899,
+    "idx": "https://greenfieldacresrealty.idxbroker.com/i/west-jefferson-all-homes",
+    "oldUrl": "/w%20jefferson%20all.htm",
+    "image": "/assets/communities/west-jefferson.jpg",
+    "alt": "Shops along the main street of downtown West Jefferson",
+    "tagline": "The High Country's arts town — murals, galleries, and the famous frescoes.",
+    "facts": {
+      "elevation": "≈3,200 ft",
+      "knownFor": "Arts district · Ashe County Cheese",
+      "drive": "30 min from Boone"
+    },
+    "paragraphs": [
+      "West Jefferson has transformed into one of North Carolina's great small arts towns — a walkable downtown of murals, galleries, and shops anchored by Ashe County Cheese and the famed churches of the frescoes.",
+      "Its blend of culture and countryside draws retirees and second-home buyers alike: in-town cottages, mountain-view homes, and Christmas-tree-farm acreage all trade within a few minutes' drive."
+    ],
+    "lat": 36.4043,
+    "lng": -81.493
+  },
+  {
+    "slug": "lansing",
+    "name": "Lansing",
+    "county": "Ashe",
+    "cityId": 25565,
+    "idx": "https://greenfieldacresrealty.idxbroker.com/i/lansing-all-homes",
+    "oldUrl": "/lansing%20all.htm",
+    "image": "/assets/communities/lansing.jpg",
+    "alt": "Aerial view of the village of Lansing among green hills",
+    "tagline": "A tiny rail town reborn — creekside quiet in far-north Ashe County.",
+    "facts": {
+      "elevation": "≈2,700 ft",
+      "knownFor": "Big Horse Creek · small-farm country",
+      "drive": "40 min from Boone"
+    },
+    "paragraphs": [
+      "Lansing is the High Country at its quietest — a historic railroad village in northern Ashe County where Big Horse Creek runs past a handful of shops, a community park, and genuinely friendly porches.",
+      "Buyers come here for creek frontage, small farms, and privacy that's getting hard to find, all within striking distance of West Jefferson and the Virginia line."
+    ],
+    "lat": 36.4993,
+    "lng": -81.5104
+  },
+  {
+    "slug": "laurel-springs",
+    "name": "Laurel Springs",
+    "county": "Alleghany / Ashe",
+    "cityId": 25731,
+    "idx": "https://greenfieldacresrealty.idxbroker.com/i/laurel-springs-all-homes",
+    "oldUrl": "/laurel%20springs%20all.htm",
+    "image": "/assets/communities/laurel-springs.jpg",
+    "alt": "Nursery rows at a Laurel Springs tree farm",
+    "tagline": "Parkway crossroads country — Doughton Park's 30 miles of trails out your back door.",
+    "facts": {
+      "elevation": "≈2,900 ft",
+      "knownFor": "Doughton Park · Blue Ridge Parkway",
+      "drive": "25 min from Sparta"
+    },
+    "paragraphs": [
+      "Laurel Springs sits where the Blue Ridge Parkway meets NC-18, making it a favorite of buyers who want the Parkway as their daily drive. Doughton Park — 30 miles of trails, trout streams, and preserved homesteads — is effectively the neighborhood park.",
+      "Cabins, cattle farms, and long-view acreage define the market here, and several of Aimee's happiest clients (see the reviews) found their mountain home in Laurel Springs."
+    ],
+    "lat": 36.4232,
+    "lng": -81.2704
+  },
+  {
+    "slug": "glade-valley",
+    "name": "Glade Valley",
+    "county": "Alleghany",
+    "cityId": 17983,
+    "idx": "https://greenfieldacresrealty.idxbroker.com/i/glade-valley-all-homes",
+    "oldUrl": "/glade%20valley%20all.htm",
+    "image": "/assets/communities/glade-valley.jpg",
+    "alt": "Green bald mountain rising over Glade Valley",
+    "tagline": "Rolling farm valley between Sparta and Roaring Gap.",
+    "facts": {
+      "elevation": "≈2,700 ft",
+      "knownFor": "Pasture views · B&B country",
+      "drive": "10 min from Sparta"
+    },
+    "paragraphs": [
+      "Glade Valley rolls out between Sparta and Roaring Gap in a patchwork of pastures, ponds, and woodlots under the Parkway's ridge line — classic Alleghany farm country.",
+      "It's a place people fall for on a Sunday drive and never leave: ranch homes with Blue Ridge backdrops, small farms, and quiet gravel-road privacy minutes from town."
+    ],
+    "lat": 36.4543,
+    "lng": -81.0581
+  },
+  {
+    "slug": "piney-creek",
+    "name": "Piney Creek",
+    "county": "Alleghany",
+    "cityId": 36728,
+    "idx": "https://greenfieldacresrealty.idxbroker.com/i/piney-creek-all-homes",
+    "oldUrl": "/piney%20creek%20all.htm",
+    "image": "/assets/communities/piney-creek.jpg",
+    "alt": "Autumn farm fields rolling toward the mountains at Piney Creek",
+    "tagline": "New River frontage on the Virginia line.",
+    "facts": {
+      "elevation": "≈2,500 ft",
+      "knownFor": "New River paddling & fishing",
+      "drive": "15 min from Sparta"
+    },
+    "paragraphs": [
+      "Piney Creek hugs the New River in Alleghany County's northwest corner, right on the Virginia line — prime territory for anglers, paddlers, and anyone who wants one of the world's oldest rivers in the front yard.",
+      "River-frontage homes and farms here are treasured and don't change hands often; when they do, they move quickly. Tell us what you're after and we'll watch the market for you."
+    ],
+    "lat": 36.5321,
+    "lng": -81.312
+  },
+  {
+    "slug": "roaring-gap",
+    "name": "Roaring Gap",
+    "county": "Alleghany",
+    "cityId": 39655,
+    "idx": "https://greenfieldacresrealty.idxbroker.com/i/roaring-gap-all-homes",
+    "oldUrl": "/roaring%20gap%20all.htm",
+    "image": "/assets/communities/roaring-gap.jpg",
+    "alt": "Mountain lake in the Roaring Gap resort community",
+    "tagline": "A historic resort enclave — golf, lakes, and gated estates on the escarpment.",
+    "facts": {
+      "elevation": "≈2,900 ft",
+      "knownFor": "Olde Beau golf · High Meadows",
+      "drive": "1 hr from Winston-Salem"
+    },
+    "paragraphs": [
+      "Roaring Gap has been a refuge for discerning families since the 1890s, perched on the Blue Ridge escarpment where the mountains fall away toward the Piedmont. Gated communities like Olde Beau — with its celebrated mountain golf course — and High Meadows define the market.",
+      "Estates here pair country-club amenities with staggering escarpment views and an easy hour's drive from Winston-Salem, making it a natural fit for Triad buyers seeking a legacy mountain home."
+    ],
+    "lat": 36.394,
+    "lng": -80.9834
+  },
+  {
+    "slug": "crumpler",
+    "name": "Crumpler",
+    "county": "Ashe",
+    "cityId": 11036,
+    "idx": "https://greenfieldacresrealty.idxbroker.com/i/crumpler-all-homes",
+    "oldUrl": "/crumpler%20all.htm",
+    "image": "/assets/communities/crumpler.jpg",
+    "alt": "Kayaks on the New River at Crumpler",
+    "tagline": "New River farm country in northern Ashe County.",
+    "facts": {
+      "elevation": "≈2,800 ft",
+      "knownFor": "New River outfitters · farmland",
+      "drive": "20 min from West Jefferson"
+    },
+    "paragraphs": [
+      "Crumpler is New River farm country — a scattering of pastures, stone farmhouses, and river bottoms along the North Fork in northern Ashe County, where outfitters like Dusty Trails put paddlers on the water all summer.",
+      "The market here is farms, acreage, and river-view homesteads: properties with real land and real character, often at prices that surprise buyers from busier mountain towns."
+    ],
+    "lat": 36.4642,
+    "lng": -81.399
+  }
+]

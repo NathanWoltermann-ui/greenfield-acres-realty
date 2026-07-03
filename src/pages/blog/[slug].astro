@@ -1,0 +1,42 @@
+---
+import Base from "../../layouts/Base.astro";
+
+export function getStaticPaths() {
+  return Object.entries(import.meta.glob("../../content/blog/*.md", { eager: true })).map(([path, mod]) => ({
+    params: { slug: path.split("/").pop().replace(".md", "") },
+    props: { post: mod },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content, frontmatter: fm } = post;
+
+const fmt = (d) =>
+  new Date(d).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" });
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: fm.title,
+  description: fm.description,
+  datePublished: fm.date,
+  author: { "@type": "Organization", name: "Greenfield Acres Realty" },
+};
+---
+<Base title={`${fm.title} — Greenfield Acres Realty`} description={fm.description} bodyClass="page-sub">
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </Fragment>
+  <main>
+    <section class="page-section" style="padding-top: clamp(8rem, 16vh, 11rem);">
+      <article class="post-article">
+        <a class="post-article__back" href="/blog">← All posts</a>
+        <p class="post-article__meta">{fmt(fm.date)}</p>
+        <h1>{fm.title}</h1>
+        <div class="post-content">
+          <Content />
+        </div>
+      </article>
+    </section>
+  </main>
+</Base>

@@ -1,0 +1,29 @@
+{
+  "name": "Greenfield Acres Realty",
+  "tagline": "Luxury Home Specialists of the High Country",
+  "slogan": "Where the grass is always green",
+  "phoneOffice": "(336) 223-3771",
+  "phoneOfficeHref": "+13362233771",
+  "phoneAimee": "336-466-7727",
+  "phoneAimeeHref": "+13364667727",
+  "whatsapp": "https://wa.me/13364667727",
+  "fax": "(336) 372-5400",
+  "email": "greenfieldacresrealty@gmail.com",
+  "address": {
+    "street": "1635 US Hwy 21 South",
+    "city": "Sparta",
+    "state": "NC",
+    "zip": "28675"
+  },
+  "hours": "Mon – Sat · 9:00 am – 5:30 pm · Sunday by appointment",
+  "idxBase": "https://greenfieldacresrealty.idxbroker.com",
+  "idxSearch": "https://greenfieldacresrealty.idxbroker.com/i/mls-search",
+  "idxLand": "https://greenfieldacresrealty.idxbroker.com/i/land-mls-listings",
+  "calendly": "",
+  "social": {
+    "facebook": "https://www.facebook.com/greenfieldacresrealty/",
+    "instagram": "https://www.instagram.com/greenfieldacresrealty/",
+    "yelp": "https://www.yelp.com/biz/greenfield-acres-realty-sparta",
+    "linkedin": "https://www.linkedin.com/in/aimee-greenfield-793065111/"
+  }
+}

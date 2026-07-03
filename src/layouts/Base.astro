@@ -1,0 +1,152 @@
+---
+import site from "../data/site.json";
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+  bodyClass?: string;
+  preloader?: boolean;
+}
+
+const {
+  title = "Greenfield Acres Realty — Luxury Home Specialists of the High Country",
+  description = "Let us sell or help you find your dream home in the High Country. Aimee Greenfield, Certified Luxury Home Specialist — Sparta, Blowing Rock & Boone, NC.",
+  ogImage = "/assets/logo.jpg",
+  bodyClass = "",
+  preloader = false,
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content={site.name} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:image" content={new URL(ogImage, Astro.site)} />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="/assets/nav-logo.jpg" type="image/jpeg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/pages.css" />
+  <slot name="head" />
+</head>
+<body class={bodyClass}>
+
+  {preloader && (
+    <div class="preloader" id="preloader" aria-hidden="true">
+      <div class="preloader__inner">
+        <svg class="preloader__mark" viewBox="0 0 64 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path class="preloader__path" d="M2 38 L20 8 L30 24 L38 12 L50 30 L62 38" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <p class="preloader__word">Greenfield&nbsp;Acres</p>
+        <p class="preloader__sub">High Country · North Carolina</p>
+      </div>
+    </div>
+  )}
+
+  <!-- ===== Navigation ===== -->
+  <header class="nav" id="nav">
+    <a class="nav__brand" href="/" aria-label="Greenfield Acres Realty — home">
+      <img class="nav__logo" src="/assets/nav-logo.jpg" alt="Greenfield Acres Realty" />
+    </a>
+
+    <nav class="nav__links" aria-label="Primary">
+      <a href="/search">Search</a>
+      <a href="/communities">Communities</a>
+      <a href="/land">Land</a>
+      <a href="/blog">Blog</a>
+      <a href="/area-info">Area&nbsp;Info</a>
+      <a href="/faq">FAQ</a>
+    </nav>
+
+    <div class="nav__cta-group">
+      <a class="nav__phone" href={`tel:${site.phoneOfficeHref}`}>{site.phoneOffice}</a>
+      <a class="btn btn--small" href="/#contact"><span>Work&nbsp;With&nbsp;Us</span></a>
+      <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== Mobile menu ===== -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <nav class="mobile-menu__links" aria-label="Mobile">
+      <a href="/">Home</a>
+      <a href="/search">Search Homes</a>
+      <a href="/communities">Communities</a>
+      <a href="/land">Land</a>
+      <a href="/blog">Blog</a>
+      <a href="/area-info">Area Info</a>
+      <a href="/faq">FAQ</a>
+      <a href="/#about">About Aimee</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <div class="mobile-menu__foot">
+      <a href={`tel:${site.phoneOfficeHref}`}>{site.phoneOffice}</a>
+      <a href={`mailto:${site.email}`}>{site.email}</a>
+    </div>
+  </div>
+
+  <slot />
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="footer__top">
+      <a class="footer__brand" href="/" aria-label="Greenfield Acres Realty — back to top">
+        <img src="/assets/logo.jpg" alt="Greenfield Acres Realty — Where the grass is always green — 336-223-3771" loading="lazy" />
+      </a>
+      <nav class="footer__links" aria-label="Footer">
+        <a href="/search">Search</a>
+        <a href="/communities">Communities</a>
+        <a href="/land">Land</a>
+        <a href="/blog">Blog</a>
+        <a href="/area-info">Area Info</a>
+        <a href="/faq">FAQ</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+      <div class="footer__social">
+        <a href={site.social.facebook} target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5h1.65V3.6c-.3-.04-1.3-.12-2.45-.12-2.4 0-4.05 1.46-4.05 4.15v2.27H7.5V13h2.7v8h3.3z"/></svg>
+        </a>
+        <a href={site.social.instagram} target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href={site.social.linkedin} target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M6.5 8.8H3.6V21h2.9V8.8zM5 7.4a1.7 1.7 0 1 0 0-3.4 1.7 1.7 0 0 0 0 3.4zM20.4 21h-2.9v-6.2c0-1.6-.6-2.6-2-2.6-1.1 0-1.7.7-2 1.4-.1.3-.1.7-.1 1V21h-2.9V8.8h2.9v1.3c.4-.6 1.3-1.5 3.1-1.5 2.3 0 3.9 1.5 3.9 4.6V21z"/></svg>
+        </a>
+        <a href={site.social.yelp} target="_blank" rel="noopener" aria-label="Yelp">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M11.2 3.2c-.3-.5-1-.6-1.9-.3l-3 1c-.9.3-1.3.9-1.1 1.5l3.3 7.2c.3.6 1 .6 1.4 0l1.5-2.6c.2-.4.3-.9.2-1.3l-.4-5.5zm1.6 11.3c-.5-.2-1 .1-1.2.6l-.6 1.6c-.3.8 0 1.4.7 1.6l3.3 1.1c.7.2 1.2-.1 1.3-.9l.2-1.8c0-.5-.3-1-.8-1.1l-2.9-1.1zm5.9-4.6l-3 .9c-.5.2-.8.7-.7 1.2l.3 1.7c.1.8.8 1.1 1.5.8l3.1-1.5c.7-.3.8-1 .4-1.6l-.9-1.2c-.2-.3-.5-.4-.7-.3zm-6.9 6.9c-.4-.4-1-.3-1.4.1l-2.2 2.5c-.5.6-.4 1.3.3 1.6l2.9 1.3c.7.3 1.3 0 1.3-.8v-3.4c0-.5-.4-1-.9-1.3z"/></svg>
+        </a>
+        <a href={site.whatsapp} target="_blank" rel="noopener" aria-label="WhatsApp — message Aimee">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2.6A9.3 9.3 0 0 0 3.8 16.4L2.6 21l4.7-1.2A9.3 9.3 0 1 0 12 2.6zm0 16.9c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-2.8.7.7-2.7-.2-.3a7.6 7.6 0 1 1 6.7 3.6zm4.2-5.6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1a6.2 6.2 0 0 1-3.1-2.7c-.2-.4 0-.5.2-.7l.5-.6c.1-.2.1-.3 0-.5-.1-.1-.5-1.3-.7-1.8-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.9 2.9 4.6 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.4-.6 1.6-1.2.2-.6.2-1 .1-1.2 0-.1-.2-.2-.4-.2z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© <span id="year"></span> Greenfield Acres Realty · <em>“Where the grass is always green”</em> · Member, Alleghany &amp; Blowing Rock Chambers of Commerce</p>
+      <p class="footer__legal">Licensed in North Carolina &amp; Virginia · Equal Housing Opportunity ⌂ · Listings via High Country Association of REALTORS® MLS</p>
+    </div>
+  </footer>
+
+  <script is:inline src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script is:inline src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script is:inline src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+  <script is:inline src="/main.js"></script>
+  <script is:inline src="/featured.js" defer></script>
+  <slot name="scripts" />
+</body>
+</html>

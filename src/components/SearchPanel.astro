@@ -1,0 +1,138 @@
+---
+import communities from "../data/communities.json";
+import site from "../data/site.json";
+---
+<form class="search-panel" data-search-panel data-idx-base={site.idxBase}>
+  <div class="search-panel__grid">
+
+    <div class="field search-panel__tags">
+      <label>Towns — pick any (or none for the whole High Country)</label>
+      <div class="search-panel__tags-row">
+        {communities.map((c) => (
+          <button type="button" class="tag-toggle" data-city-id={c.cityId}>{c.name}</button>
+        ))}
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="s-type">Property type</label>
+      <select id="s-type" data-s-type>
+        <option value="1">Homes</option>
+        <option value="6">Land</option>
+        <option value="4">Commercial</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="s-minprice">Min price</label>
+      <select id="s-minprice" data-s-lp>
+        <option value="">Any</option>
+        <option value="200000">$200k</option>
+        <option value="400000">$400k</option>
+        <option value="600000">$600k</option>
+        <option value="800000">$800k</option>
+        <option value="1000000">$1M</option>
+        <option value="2000000">$2M</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="s-maxprice">Max price</label>
+      <select id="s-maxprice" data-s-hp>
+        <option value="">Any</option>
+        <option value="600000">$600k</option>
+        <option value="800000">$800k</option>
+        <option value="1000000">$1M</option>
+        <option value="2000000">$2M</option>
+        <option value="4000000">$4M</option>
+        <option value="8000000">$8M</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="s-beds">Beds</label>
+      <select id="s-beds" data-s-bd>
+        <option value="">Any</option>
+        <option value="2">2+</option>
+        <option value="3">3+</option>
+        <option value="4">4+</option>
+        <option value="5">5+</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="s-baths">Baths</label>
+      <select id="s-baths" data-s-tb>
+        <option value="">Any</option>
+        <option value="2">2+</option>
+        <option value="3">3+</option>
+        <option value="4">4+</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="s-sqft">Min sq ft</label>
+      <select id="s-sqft" data-s-sqft>
+        <option value="">Any</option>
+        <option value="1500">1,500+</option>
+        <option value="2500">2,500+</option>
+        <option value="3500">3,500+</option>
+        <option value="5000">5,000+</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="s-acres">Min acres</label>
+      <select id="s-acres" data-s-acres>
+        <option value="">Any</option>
+        <option value="1">1+</option>
+        <option value="5">5+</option>
+        <option value="10">10+</option>
+        <option value="25">25+</option>
+        <option value="50">50+</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="s-sort">Sort by</label>
+      <select id="s-sort" data-s-srt>
+        <option value="newest">Newest first</option>
+        <option value="prd">Price — high to low</option>
+        <option value="pra">Price — low to high</option>
+      </select>
+    </div>
+
+    <div class="search-panel__actions">
+      <button class="btn btn--brass" type="submit"><span>Search Live MLS Listings</span></button>
+      <p class="search-panel__note">Results open on our live High Country MLS search — every listing current, straight from the source.</p>
+    </div>
+  </div>
+</form>
+
+<script is:inline>
+  (() => {
+    document.querySelectorAll("[data-search-panel]").forEach((form) => {
+      form.querySelectorAll(".tag-toggle").forEach((btn) => {
+        btn.addEventListener("click", () => btn.classList.toggle("is-active"));
+      });
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const p = new URLSearchParams();
+        const val = (sel) => form.querySelector(sel)?.value;
+        p.set("pt", val("[data-s-type]") || "1");
+        const cities = [...form.querySelectorAll(".tag-toggle.is-active")].map((b) => b.dataset.cityId);
+        if (cities.length) {
+          p.set("ccz", "city");
+          cities.forEach((id) => p.append("city[]", id));
+        }
+        for (const [attr, key] of [["lp","lp"],["hp","hp"],["bd","bd"],["tb","tb"],["sqft","sqft"],["acres","acres"]]) {
+          const v = val(`[data-s-${attr}]`);
+          if (v) p.set(key, v);
+        }
+        p.set("srt", val("[data-s-srt]") || "newest");
+        const base = form.dataset.idxBase || "https://greenfieldacresrealty.idxbroker.com";
+        window.open(`${base}/idx/results/listings?${p.toString()}`, "_blank", "noopener");
+      });
+    });
+  })();
+</script>

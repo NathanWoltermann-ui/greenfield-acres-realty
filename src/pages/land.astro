@@ -1,0 +1,71 @@
+---
+import Base from "../layouts/Base.astro";
+import site from "../data/site.json";
+import communities from "../data/communities.json";
+
+const landByTown = communities.map((c) => ({
+  name: c.name,
+  url: `${site.idxBase}/idx/results/listings?pt=6&ccz=city&city[]=${c.cityId}&srt=newest`,
+}));
+---
+<Base
+  title="Land, Farms & Acreage — Greenfield Acres Realty"
+  description="View lots, riverfront, pasture, and mountain acreage across the NC High Country — search live MLS land listings with Greenfield Acres Realty."
+  bodyClass="page-sub"
+>
+  <main>
+    <section class="page-hero page-hero--image">
+      <div class="page-hero__media"><img src="/assets/heroes/pasture-road.jpg" alt="" fetchpriority="high" /></div>
+      <div class="page-hero__content">
+        <p class="page-hero__eyebrow" data-hero-fade>Land · Farms · Acreage</p>
+        <h1 class="page-hero__title" data-hero-fade>Own a piece of <em>the Blue Ridge.</em></h1>
+        <p class="page-hero__lede" data-hero-fade>
+          View lots, trout streams, pasture, and timbered mountainside — land is where High Country
+          dreams usually start, and it's a Greenfield Acres specialty.
+        </p>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <div class="page-section__inner">
+        <div class="page-section__head">
+          <p class="section-kicker" data-reveal>Featured land</p>
+          <h2 class="section-title" data-split>Parcels worth walking.</h2>
+        </div>
+
+        <div class="listing-grid" data-featured-grid="land">
+          <!-- populated from the live MLS featured feed; graceful fallback below -->
+        </div>
+        <p class="search-panel__note" data-featured-empty="land" hidden>
+          Aimee's featured land listings rotate frequently — see everything current on the
+          <a href={site.idxLand} target="_blank" rel="noopener">live MLS land search →</a>
+        </p>
+
+        <div class="land-cta-band" data-reveal>
+          <div>
+            <h3>Looking for something specific — river frontage, a Christmas-tree farm, a gated view lot?</h3>
+            <p>Much of the best land here trades quietly. Tell Aimee what you're after and she'll watch for it.</p>
+          </div>
+          <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+            <a class="btn btn--brass" href={site.idxLand} target="_blank" rel="noopener"><span>Search All Land Listings</span></a>
+            <a class="btn btn--ghost" href="/#contact"><span>Tell Aimee What You Want</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section page-section--paper">
+      <div class="page-section__inner">
+        <div class="page-section__head">
+          <p class="section-kicker" data-reveal>Browse by town</p>
+          <h2 class="section-title" data-split>Land, town by town.</h2>
+        </div>
+        <div class="price-links" data-reveal>
+          {landByTown.map((t) => (
+            <a href={t.url} target="_blank" rel="noopener">{t.name}</a>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+</Base>

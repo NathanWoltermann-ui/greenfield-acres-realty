@@ -1,0 +1,66 @@
+---
+import Base from "../layouts/Base.astro";
+import SearchPanel from "../components/SearchPanel.astro";
+import communities from "../data/communities.json";
+import site from "../data/site.json";
+---
+<Base
+  title="Property Search — High Country MLS — Greenfield Acres Realty"
+  description="Search live High Country MLS listings by town, price, beds, acreage and more — homes, land, and farms across the NC Blue Ridge."
+  bodyClass="page-sub"
+>
+  <main>
+    <section class="page-hero">
+      <div class="page-hero__content">
+        <p class="page-hero__eyebrow" data-hero-fade>Live High Country MLS</p>
+        <h1 class="page-hero__title" data-hero-fade>Search every home <em>on the mountain.</em></h1>
+        <p class="page-hero__lede" data-hero-fade>
+          Every active listing in the High Country MLS — homes, land, and farms.
+          Set your criteria and we'll open the live results; save searches and get alerts once you're there.
+        </p>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <div class="page-section__inner">
+        <SearchPanel />
+      </div>
+    </section>
+
+    <section class="page-section page-section--paper">
+      <div class="page-section__inner">
+        <div class="page-section__head">
+          <p class="section-kicker" data-reveal>Shortcuts</p>
+          <h2 class="section-title" data-split>Or start from a well-worn trail.</h2>
+        </div>
+        <div class="area-links">
+          <a class="area-link" href={`${site.idxBase}/idx/results/listings?pt=1&lp=800000&srt=prd`} target="_blank" rel="noopener" data-reveal>
+            <span>Curated</span>
+            <h3>Luxury Homes · $800k+</h3>
+            <p>The upper tier of the High Country market, priced high to low.</p>
+          </a>
+          <a class="area-link" href={site.idxLand} target="_blank" rel="noopener" data-reveal>
+            <span>Acreage</span>
+            <h3>Land &amp; Lots</h3>
+            <p>View parcels, riverfront, and farm acreage across the region.</p>
+          </a>
+          <a class="area-link" href={`${site.idxBase}/idx/results/listings?pt=1&srt=newest`} target="_blank" rel="noopener" data-reveal>
+            <span>Fresh</span>
+            <h3>Newest Listings</h3>
+            <p>What just hit the market, updated continuously from the MLS.</p>
+          </a>
+          {communities.slice(0, 6).map((c) => (
+            <a class="area-link" href={c.idx} target="_blank" rel="noopener" data-reveal>
+              <span>{c.county} County</span>
+              <h3>Homes in {c.name}</h3>
+              <p>{c.tagline}</p>
+            </a>
+          ))}
+        </div>
+        <div class="communities__more" data-reveal>
+          <a class="btn btn--ghost btn--ghost-dark" href="/communities"><span>Browse All 13 Communities</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+</Base>

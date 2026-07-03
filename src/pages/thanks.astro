@@ -1,0 +1,20 @@
+---
+import Base from "../layouts/Base.astro";
+import site from "../data/site.json";
+---
+<Base title="Message received — Greenfield Acres Realty" description="Thanks for reaching out — Aimee will be in touch shortly." bodyClass="page-sub">
+  <main>
+    <section class="thanks-hero">
+      <div>
+        <p class="section-kicker section-kicker--light" data-hero-fade>Message received</p>
+        <h1 data-hero-fade>The porch light's on for you.</h1>
+        <p data-hero-fade>
+          Thanks for reaching out — Aimee usually answers within minutes during office hours.
+          If it's urgent, call <a href={`tel:${site.phoneAimeeHref}`} style="text-decoration underline; border-bottom: 1px solid currentColor;">{site.phoneAimee}</a> or
+          message her on <a href={site.whatsapp} style="border-bottom: 1px solid currentColor;">WhatsApp</a>.
+        </p>
+        <a class="btn btn--brass" href="/"><span>Back to the Homepage</span></a>
+      </div>
+    </section>
+  </main>
+</Base>

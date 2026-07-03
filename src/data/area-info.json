@@ -1,0 +1,25 @@
+{
+  "attractions": [
+    { "name": "Blue Ridge Parkway — Milepost 234", "category": "Scenic drive", "lat": 36.4255, "lng": -81.1782, "url": "https://www.blueridgeparkway.org", "blurb": "America's favorite drive runs right past our door — we're the heart of the Parkway at MP 234." },
+    { "name": "Doughton Park", "category": "Park & trails", "lat": 36.4278, "lng": -81.1832, "url": "https://www.blueridgeparkway.org/poi/doughton-park/", "blurb": "30 miles of trails, trout streams, and preserved mountain homesteads." },
+    { "name": "New River State Park", "category": "State park", "lat": 36.4521, "lng": -81.3389, "url": "https://www.ncparks.gov/new-river-state-park", "blurb": "Paddle and fish one of the oldest rivers in the world." },
+    { "name": "Stone Mountain State Park", "category": "State park", "lat": 36.3871, "lng": -81.0272, "url": "https://www.ncparks.gov/stone-mountain-state-park/", "blurb": "A 600-foot granite dome, 18 miles of trails, and 30 miles of trout waters." },
+    { "name": "Julian Price Memorial Park", "category": "Park & lake", "lat": 36.1401, "lng": -81.7323, "url": "https://www.blueridgeheritage.com/destinations/julian-price-memorial-park/", "blurb": "Canoe Price Lake beneath Grandfather Mountain." },
+    { "name": "Moses Cone Memorial Park", "category": "Park & manor", "lat": 36.1499, "lng": -81.6921, "url": "https://www.blueridgeheritage.com/destinations/moses-cone-manor/", "blurb": "25 miles of carriage trails around the historic Flat Top Manor." },
+    { "name": "Mount Jefferson State Natural Area", "category": "State park", "lat": 36.3969, "lng": -81.4739, "url": "https://www.ncparks.gov/mount-jefferson-state-natural-area", "blurb": "Summit views over Jefferson, West Jefferson, and three states." },
+    { "name": "Grandfather Mountain", "category": "Attraction", "lat": 36.0946, "lng": -81.8318, "url": "https://grandfather.com", "blurb": "The mile-high swinging bridge and the High Country's most famous peak." },
+    { "name": "Appalachian Ski Mtn.", "category": "Ski resort", "lat": 36.1834, "lng": -81.6519, "url": "https://www.appskimtn.com", "blurb": "Family skiing, snowboarding, and outdoor ice skating near Blowing Rock." },
+    { "name": "Beech Mountain Resort", "category": "Ski resort", "lat": 36.1938, "lng": -81.8886, "url": "https://www.beechmountainresort.com", "blurb": "Ski and ride at 5,506 feet — the highest resort town in the East." },
+    { "name": "Sugar Mountain Resort", "category": "Ski resort", "lat": 36.1301, "lng": -81.8593, "url": "https://www.skisugar.com", "blurb": "The High Country's biggest ski area, minutes from Banner Elk." },
+    { "name": "City of Galax, Virginia", "category": "Nearby town", "lat": 36.6612, "lng": -80.9240, "url": "https://www.visitgalax.com", "blurb": "Old-time music capital, 30 minutes north across the Virginia line." },
+    { "name": "Grayson County, Virginia", "category": "Nearby region", "lat": 36.6220, "lng": -81.1530, "url": "https://www.graysoncountyva.com", "blurb": "Mount Rogers, the Grayson Highlands ponies, and VA mountain land (Aimee is licensed in Virginia, too)." }
+  ],
+  "resources": [
+    { "name": "Alleghany County Chamber of Commerce", "category": "Chamber", "url": "https://www.sparta-nc.com", "blurb": "Sparta visitor info, business directory, and events — Aimee is a proud member." },
+    { "name": "Blowing Rock Chamber of Commerce", "category": "Chamber", "url": "https://blowingrockncchamber.com/home", "blurb": "Village events, dining, and lodging — Aimee is a proud member." },
+    { "name": "Boone Area Chamber of Commerce", "category": "Chamber", "url": "https://www.boonechamber.com/", "blurb": "The hub for High Country business and relocation info." },
+    { "name": "The Blue Ridge Parkway", "category": "Scenic drive", "url": "https://www.blueridgeparkway.org", "blurb": "Trip planning, mileposts, and closures for America's favorite drive." },
+    { "name": "High Country Host", "category": "Visitor guide", "url": "https://highcountryhost.com", "blurb": "The official visitor guide for the NC High Country." },
+    { "name": "New River State Park", "category": "Outdoors", "url": "https://www.ncparks.gov/new-river-state-park", "blurb": "River access points, camping, and paddle trail maps." }
+  ]
+}
