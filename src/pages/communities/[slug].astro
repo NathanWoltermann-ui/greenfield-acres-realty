@@ -1,0 +1,112 @@
+---
+import Base from "../../layouts/Base.astro";
+import communities from "../../data/communities.json";
+import site from "../../data/site.json";
+
+export function getStaticPaths() {
+  return communities.map((c) => ({ params: { slug: c.slug }, props: { community: c } }));
+}
+
+const { community: c } = Astro.props;
+
+const heroImages = [
+  "/assets/heroes/ridge-mist.jpg",
+  "/assets/heroes/sunbeam-valley.jpg",
+  "/assets/heroes/ridgelines.jpg",
+  "/assets/heroes/pasture-road.jpg",
+];
+const hero = heroImages[communities.findIndex((x) => x.slug === c.slug) % heroImages.length];
+
+const idxResults = `${site.idxBase}/idx/results/listings`;
+const luxuryLink = `${idxResults}?pt=1&ccz=city&city[]=${c.cityId}&lp=800000&srt=prd`;
+const landLink = `${idxResults}?pt=6&ccz=city&city[]=${c.cityId}&srt=prd`;
+const newestLink = `${idxResults}?pt=1&ccz=city&city[]=${c.cityId}&srt=newest`;
+
+const posts = Object.values(import.meta.glob("../../content/blog/*.md", { eager: true }))
+  .filter((p) => (p.frontmatter.title + " " + p.frontmatter.description).toLowerCase().includes(c.name.toLowerCase()))
+  .slice(0, 3);
+
+const others = communities.filter((x) => x.slug !== c.slug).slice(0, 3);
+---
+<Base
+  title={`${c.name}, NC Homes for Sale — Greenfield Acres Realty`}
+  description={`${c.tagline} Browse live MLS listings and learn why ${c.name} is such a wonderful place to live.`}
+  ogImage={c.image}
+  bodyClass="page-sub"
+>
+  <main>
+    <section class="page-hero page-hero--image">
+      <div class="page-hero__media"><img src={hero} alt="" fetchpriority="high" /></div>
+      <div class="page-hero__content">
+        <p class="page-hero__eyebrow" data-hero-fade>High Country Communities · {c.county} County</p>
+        <h1 class="page-hero__title" data-hero-fade>{c.name}, <em>North Carolina</em></h1>
+        <p class="page-hero__lede" data-hero-fade>{c.tagline}</p>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <div class="page-section__inner community-layout">
+        <div>
+          <div class="community-facts" data-reveal>
+            <div><strong>{c.facts.elevation}</strong><span>Elevation</span></div>
+            <div><strong>{c.facts.knownFor}</strong><span>Known for</span></div>
+            <div><strong>{c.facts.drive}</strong><span>Getting here</span></div>
+          </div>
+          <div class="community-body">
+            {c.paragraphs.map((p) => <p data-reveal>{p}</p>)}
+          </div>
+
+          <div class="price-links" data-reveal>
+            <a href={c.idx} target="_blank" rel="noopener">All {c.name} listings</a>
+            <a href={luxuryLink} target="_blank" rel="noopener">Luxury · $800k+</a>
+            <a href={newestLink} target="_blank" rel="noopener">Newest first</a>
+            <a href={landLink} target="_blank" rel="noopener">Land in {c.name}</a>
+          </div>
+
+          <div class="community-cta" data-reveal>
+            <a class="btn btn--solid" href={c.idx} target="_blank" rel="noopener"><span>See MLS Listings for {c.name}</span></a>
+            <a class="btn btn--ghost btn--ghost-dark" href="/#contact"><span>Ask Aimee About {c.name}</span></a>
+          </div>
+        </div>
+
+        <aside class="community-aside">
+          <figure class="community-photo" data-reveal>
+            <img src={c.image} alt={c.alt} loading="lazy" />
+            <figcaption>{c.name}, North Carolina</figcaption>
+          </figure>
+          {posts.length > 0 && (
+            <div class="community-posts" data-reveal>
+              <h4>From the blog</h4>
+              {posts.map((p) => (
+                <a href={`/blog/${p.file.split(/[\\/]/).pop().replace(".md", "")}`}>{p.frontmatter.title}</a>
+              ))}
+            </div>
+          )}
+        </aside>
+      </div>
+    </section>
+
+    <section class="page-section page-section--paper">
+      <div class="page-section__inner">
+        <div class="page-section__head">
+          <p class="section-kicker" data-reveal>Keep exploring</p>
+          <h2 class="section-title" data-split>More High Country towns.</h2>
+        </div>
+        <div class="community-grid">
+          {others.map((o) => (
+            <a class="place" href={`/communities/${o.slug}`} data-reveal-img>
+              <div class="place__media place__media--wide">
+                <img loading="lazy" src={o.image} alt={o.alt} />
+              </div>
+              <div class="place__body">
+                <h3>{o.name}</h3>
+                <p>{o.tagline}</p>
+                <span class="place__link">Explore {o.name} →</span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+</Base>

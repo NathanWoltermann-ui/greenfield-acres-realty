@@ -1,0 +1,45 @@
+---
+import Base from "../../layouts/Base.astro";
+
+const posts = Object.entries(import.meta.glob("../../content/blog/*.md", { eager: true }))
+  .map(([path, mod]) => ({
+    slug: path.split("/").pop().replace(".md", ""),
+    ...mod.frontmatter,
+  }))
+  .sort((a, b) => new Date(b.date) - new Date(a.date));
+
+const fmt = (d) =>
+  new Date(d).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" });
+---
+<Base
+  title="Blog — Greenfield Acres Realty"
+  description="Market updates, town guides, and mountain-living stories from the North Carolina High Country."
+  bodyClass="page-sub"
+>
+  <main>
+    <section class="page-hero">
+      <div class="page-hero__content">
+        <p class="page-hero__eyebrow" data-hero-fade>Notes from the mountains</p>
+        <h1 class="page-hero__title" data-hero-fade>The Greenfield <em>journal.</em></h1>
+        <p class="page-hero__lede" data-hero-fade>
+          Market updates, town guides, and life in the High Country — written from our cabin office on US-21.
+        </p>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <div class="page-section__inner">
+        <div class="post-grid">
+          {posts.map((p) => (
+            <a class="post-card" href={`/blog/${p.slug}`} data-reveal>
+              <time datetime={p.date instanceof Date ? p.date.toISOString() : p.date}>{fmt(p.date)}</time>
+              <h3>{p.title}</h3>
+              <p>{p.description}</p>
+              <span class="post-card__link">Read →</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+</Base>

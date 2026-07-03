@@ -1,0 +1,111 @@
+---
+import Base from "../layouts/Base.astro";
+import communities from "../data/communities.json";
+import areaInfo from "../data/area-info.json";
+import site from "../data/site.json";
+
+const towns = communities.map((c) => ({
+  name: c.name,
+  slug: c.slug,
+  lat: c.lat,
+  lng: c.lng,
+  blurb: c.tagline,
+}));
+const attractions = areaInfo.attractions;
+const office = { lat: 36.4909, lng: -81.1266 };
+---
+<Base
+  title="Area Info — Explore the NC High Country — Greenfield Acres Realty"
+  description="An interactive map of the High Country: our 13 communities, state parks, ski resorts, the Blue Ridge Parkway, and the local resources we trust."
+  bodyClass="page-sub"
+>
+  <Fragment slot="head">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  </Fragment>
+
+  <main>
+    <section class="page-hero">
+      <div class="page-hero__content">
+        <p class="page-hero__eyebrow" data-hero-fade>Milepost 234, Blue Ridge Parkway</p>
+        <h1 class="page-hero__title" data-hero-fade>Get to know <em>the High Country.</em></h1>
+        <p class="page-hero__lede" data-hero-fade>
+          Hiking, rafting, fishing, skiing, farmers' markets, and town parades — explore the map to see
+          where our communities sit and what surrounds them. Click any pin to dig deeper.
+        </p>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <div class="page-section__inner">
+        <div class="area-map-wrap" data-reveal>
+          <div id="areaMap"></div>
+        </div>
+        <div class="map-legend">
+          <span><i class="dot-town"></i> Our communities — click through to homes for sale</span>
+          <span><i class="dot-poi"></i> Parks, resorts &amp; attractions</span>
+          <span><i style="background: #b08a4f; border-radius: 2px; width: 14px; height: 14px;"></i> Our Sparta office</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section page-section--paper">
+      <div class="page-section__inner">
+        <div class="page-section__head">
+          <p class="section-kicker" data-reveal>Local links we trust</p>
+          <h2 class="section-title" data-split>Resources for visitors &amp; new neighbors.</h2>
+        </div>
+        <div class="area-links">
+          {areaInfo.resources.map((r) => (
+            <a class="area-link" href={r.url} target="_blank" rel="noopener" data-reveal>
+              <span>{r.category}</span>
+              <h3>{r.name}</h3>
+              <p>{r.blurb}</p>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Fragment slot="scripts">
+    <script is:inline src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script is:inline define:vars={{ towns, attractions, office }}>
+      const map = L.map("areaMap", { scrollWheelZoom: false }).setView([36.32, -81.42], 10);
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        maxZoom: 17,
+        attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      }).addTo(map);
+
+      const popup = (title, blurb, linkHtml) =>
+        `<h4>${title}</h4><p style="margin:0 0 6px;">${blurb}</p>${linkHtml}`;
+
+      towns.forEach((t) => {
+        L.circleMarker([t.lat, t.lng], {
+          radius: 9, color: "#f5f0e6", weight: 2, fillColor: "#1d3528", fillOpacity: 0.95,
+        })
+          .addTo(map)
+          .bindPopup(popup(t.name, t.blurb, `<a href="/communities/${t.slug}">Explore ${t.name} & see homes →</a>`));
+      });
+
+      attractions.forEach((a) => {
+        L.circleMarker([a.lat, a.lng], {
+          radius: 7, color: "#f5f0e6", weight: 2, fillColor: "#b08a4f", fillOpacity: 0.95,
+        })
+          .addTo(map)
+          .bindPopup(popup(a.name, a.blurb, `<a href="${a.url}" target="_blank" rel="noopener">Visit website →</a>`));
+      });
+
+      const officeIcon = L.divIcon({
+        className: "office-pin",
+        html: '<div style="background:#b08a4f;color:#fffdf9;font-weight:700;font-size:11px;letter-spacing:.05em;padding:4px 8px;border-radius:6px;white-space:nowrap;box-shadow:0 4px 12px rgba(20,32,26,.4);">GREENFIELD ACRES</div>',
+        iconAnchor: [60, 14],
+      });
+      L.marker([office.lat, office.lng], { icon: officeIcon })
+        .addTo(map)
+        .bindPopup(popup("Greenfield Acres Realty", "1635 US Hwy 21 South, Sparta — come on up, the porch light's on.", '<a href="/#contact">Contact us →</a>'));
+
+      // let the user zoom once they engage with the map
+      map.on("click focus", () => map.scrollWheelZoom.enable());
+    </script>
+  </Fragment>
+</Base>

@@ -1,0 +1,50 @@
+---
+import Base from "../layouts/Base.astro";
+import faqs from "../data/faq.json";
+import site from "../data/site.json";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+---
+<Base
+  title="FAQ — Buying & Selling in the High Country — Greenfield Acres Realty"
+  description="Answers to the questions we hear most: pre-qualification, timelines, credit scores, earnest money, due diligence, and why the NC mountains."
+  bodyClass="page-sub"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </Fragment>
+  <main>
+    <section class="page-hero">
+      <div class="page-hero__content">
+        <p class="page-hero__eyebrow" data-hero-fade>Good questions</p>
+        <h1 class="page-hero__title" data-hero-fade>Asked &amp; <em>answered.</em></h1>
+        <p class="page-hero__lede" data-hero-fade>
+          The questions we hear most from buyers and sellers — answered plainly.
+          Don't see yours? Call <a href={`tel:${site.phoneOfficeHref}`}>{site.phoneOffice}</a> and just ask.
+        </p>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <div class="accordion" data-accordion>
+        {faqs.map((f, i) => (
+          <div class={`accordion__item${i === 0 ? " is-open" : ""}`}>
+            <button class="accordion__q" aria-expanded={i === 0 ? "true" : "false"}>{f.q}</button>
+            <div class="accordion__a"><p>{f.a}</p></div>
+          </div>
+        ))}
+      </div>
+      <div class="communities__more" data-reveal>
+        <a class="btn btn--solid" href="/#contact"><span>Still Curious? Ask Aimee</span></a>
+      </div>
+    </section>
+  </main>
+</Base>

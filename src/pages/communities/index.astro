@@ -1,0 +1,42 @@
+---
+import Base from "../../layouts/Base.astro";
+import communities from "../../data/communities.json";
+---
+<Base
+  title="High Country Communities — Greenfield Acres Realty"
+  description="Explore homes for sale in all 13 High Country communities we serve — Sparta, Blowing Rock, Boone, Banner Elk, West Jefferson, and more."
+  bodyClass="page-sub"
+>
+  <main>
+    <section class="page-hero">
+      <div class="page-hero__content">
+        <p class="page-hero__eyebrow" data-hero-fade>Where we work</p>
+        <h1 class="page-hero__title" data-hero-fade>Thirteen towns.<br/>One backyard: <em>the Blue Ridge.</em></h1>
+        <p class="page-hero__lede" data-hero-fade>
+          From Sparta's farm valleys to Blowing Rock's estates and Beech Mountain's ski slopes —
+          pick a town below to read the local story and browse its live MLS listings.
+        </p>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <div class="page-section__inner">
+        <div class="community-grid">
+          {communities.map((c, i) => (
+            <a class="place place--card" href={`/communities/${c.slug}`} data-reveal-img>
+              <div class="place__media place__media--wide">
+                <img loading="lazy" src={c.image} alt={c.alt} />
+              </div>
+              <div class="place__body">
+                <span class="place__num">{String(i + 1).padStart(2, "0")}</span>
+                <h3>{c.name}</h3>
+                <p>{c.tagline}</p>
+                <span class="place__link">Explore {c.name} →</span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+</Base>
