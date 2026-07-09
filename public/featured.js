@@ -80,7 +80,7 @@
     .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
     .then((data) => {
       /* home page: replace static cards with the live feed, rotating order */
-      if (track && data.source === "idx" && data.homes && data.homes.length >= 3) {
+      if (track && data.source && data.source.startsWith("idx") && data.homes && data.homes.length >= 3) {
         const cta = track.querySelector(".card--cta");
         track.querySelectorAll(".card:not(.card--cta)").forEach((c) => c.remove());
         shuffle(data.homes).forEach((l) => track.insertBefore(buildCard(l), cta));

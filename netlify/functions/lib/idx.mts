@@ -52,17 +52,50 @@ const normalize = (raw: any) => {
 export type Listing = ReturnType<typeof normalize>;
 export type FeaturedData = { updated: string; source: string; homes: Listing[]; land: Listing[] };
 
+/** All 13 High Country town city IDs (HCAR MLS via IDX) — keep in sync with src/data/communities.json */
+const CITY_IDS = [44011, 4531, 4970, 2514, 3263, 23215, 50899, 25565, 25731, 17983, 36728, 39655, 11036];
+
+async function idxGet(path: string, apiKey: string, params?: URLSearchParams): Promise<any[]> {
+  const headers: Record<string, string> = { accesskey: apiKey, outputtype: "json", apiversion: "1.8.0" };
+  const ancillary = process.env.IDX_ANCILLARY_KEY;
+  if (ancillary) headers.ancillarykey = ancillary;
+
+  const url = `https://api.idxbroker.com${path}${params ? `?${params}` : ""}`;
+  const res = await fetch(url, { headers });
+  if (res.status === 204) return []; // valid key, no matching data
+  if (!res.ok) throw new Error(`IDX API ${path} responded ${res.status}`);
+  const payload = await res.json().catch(() => null);
+  return Array.isArray(payload) ? payload : Object.values(payload ?? {});
+}
+
+/** MLS-wide premium search — used when the account has no own featured listings. */
+async function searchPremium(apiKey: string, propertyType: string, minPrice?: number): Promise<any[]> {
+  if (!process.env.IDX_ANCILLARY_KEY) return [];
+  const params = new URLSearchParams();
+  params.set("ccz", "city");
+  CITY_IDS.forEach((id) => params.append("city[]", String(id)));
+  params.set("pt", propertyType);
+  if (minPrice) params.set("lp", String(minPrice));
+  params.set("srt", "prd");
+  params.set("per", "25");
+  return idxGet("/clients/searchquery", apiKey, params);
+}
+
 export async function refreshFeatured(): Promise<FeaturedData | null> {
   const apiKey = process.env.IDX_API_KEY;
   if (!apiKey) return null;
 
-  const res = await fetch("https://api.idxbroker.com/clients/featured", {
-    headers: { accesskey: apiKey, outputtype: "json", apiversion: "1.8.0" },
-  });
-  if (!res.ok) throw new Error(`IDX API responded ${res.status}`);
-
-  const payload = await res.json();
-  const rows: any[] = Array.isArray(payload) ? payload : Object.values(payload ?? {});
+  // 1st choice: Aimee's own featured listings; otherwise premium homes + land across the whole MLS
+  let rows = await idxGet("/clients/featured", apiKey);
+  let source = "idx";
+  if (!rows.length) {
+    rows = [
+      ...(await searchPremium(apiKey, "1", MIN_HOME_PRICE)),
+      ...(await searchPremium(apiKey, "6")),
+    ];
+    source = "idx-mls";
+  }
+  if (!rows.length) return null;
 
   const active = rows
     .map(normalize)
@@ -81,10 +114,12 @@ export async function refreshFeatured(): Promise<FeaturedData | null> {
     .sort((a, b) => (b.price ?? 0) - (a.price ?? 0))
     .slice(0, MAX_PER_GROUP);
 
-  const data: FeaturedData = { updated: new Date().toISOString(), source: "idx", homes, land };
+  if (!homes.length && !land.length) return null;
+
+  const data: FeaturedData = { updated: new Date().toISOString(), source, homes, land };
   await getStore("listings").setJSON("featured", data);
 
-  console.log(`idx refresh: cached ${homes.length} homes, ${land.length} land (of ${rows.length} featured, ${active.length} active).`);
+  console.log(`idx refresh (${source}): cached ${homes.length} homes, ${land.length} land (of ${rows.length} rows, ${active.length} active).`);
   return data;
 }
 
