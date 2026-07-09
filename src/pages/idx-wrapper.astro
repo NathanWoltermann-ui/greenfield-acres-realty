@@ -1,0 +1,83 @@
+---
+// Dynamic wrapper for IDX Broker — this page is fetched by IDX and wrapped
+// around every MLS search/results/detail page on her IDX subdomain, so those
+// pages wear the site's branding.
+//
+// Rules for this page (do not "improve" it to match Base.astro):
+//  - ALL asset/link URLs must be ABSOLUTE — IDX serves this from its own domain.
+//  - No GSAP/Lenis/main.js — IDX injects its own UI between the markers.
+//  - The <div id="idxStart"/idxStop"> markers delimit where IDX content goes.
+//
+// ⚠ At launch, change SITE_BASE to https://www.greenfieldacresrealty.com
+const SITE_BASE = "https://greenfield-acres-realty.netlify.app";
+
+import site from "../data/site.json";
+---
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>High Country MLS Search — Greenfield Acres Realty</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #14201a; --pine: #1d3528; --pine-deep: #16291f; --moss: #44604c;
+      --cream: #f5f0e6; --paper: #faf7f0; --brass: #b08a4f; --brass-light: #cfa86a;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: "Instrument Sans", -apple-system, sans-serif; color: var(--ink); background: var(--paper); }
+    .gw-nav {
+      background: var(--pine-deep); color: var(--cream);
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;
+      gap: 1rem; padding: 0.9rem clamp(1rem, 4vw, 3rem);
+    }
+    .gw-nav img { height: 48px; width: auto; border-radius: 8px; display: block; }
+    .gw-nav nav { display: flex; flex-wrap: wrap; gap: 1.3rem; }
+    .gw-nav a { color: var(--cream); text-decoration: none; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; }
+    .gw-nav a:hover { color: var(--brass-light); }
+    .gw-nav .gw-phone { font-family: "Fraunces", Georgia, serif; font-style: italic; font-size: 0.95rem; letter-spacing: 0; text-transform: none; }
+    .gw-strip { background: var(--pine); color: var(--cream); text-align: center; padding: 0.55rem 1rem; font-size: 0.8rem; }
+    .gw-strip a { color: var(--brass-light); text-decoration: none; font-weight: 600; }
+    .gw-main { max-width: 1200px; margin: 0 auto; padding: 1.5rem clamp(0.8rem, 3vw, 2rem) 3rem; }
+    .gw-footer { background: var(--ink); color: rgba(245, 240, 230, 0.8); text-align: center; padding: 2rem 1rem; font-size: 0.82rem; line-height: 1.9; }
+    .gw-footer a { color: var(--brass-light); text-decoration: none; }
+    .gw-footer em { font-family: "Fraunces", Georgia, serif; }
+  </style>
+</head>
+<body>
+
+  <header class="gw-nav">
+    <a href={SITE_BASE + "/"} aria-label="Greenfield Acres Realty — home">
+      <img src={SITE_BASE + "/assets/nav-logo.jpg"} alt="Greenfield Acres Realty" />
+    </a>
+    <nav>
+      <a href={SITE_BASE + "/"}>Home</a>
+      <a href={SITE_BASE + "/search"}>Search</a>
+      <a href={SITE_BASE + "/communities"}>Communities</a>
+      <a href={SITE_BASE + "/land"}>Land</a>
+      <a href={SITE_BASE + "/blog"}>Blog</a>
+      <a href={SITE_BASE + "/area-info"}>Area Info</a>
+      <a href={SITE_BASE + "/faq"}>FAQ</a>
+      <a href={SITE_BASE + "/#contact"}>Contact</a>
+    </nav>
+    <a class="gw-phone" href={`tel:${site.phoneOfficeHref}`}>{site.phoneOffice}</a>
+  </header>
+  <div class="gw-strip">
+    Questions about a listing? Call Aimee — <a href={`tel:${site.phoneAimeeHref}`}>{site.phoneAimee}</a> · Luxury Home Specialists of the High Country
+  </div>
+
+  <main class="gw-main">
+    <div id="idxStart" style="display: none;"></div>
+    <div id="idxStop" style="display: none;"></div>
+  </main>
+
+  <footer class="gw-footer">
+    © Greenfield Acres Realty · <em>“Where the grass is always green”</em><br/>
+    1635 US Hwy 21 South, Sparta, NC 28675 · <a href={`tel:${site.phoneOfficeHref}`}>{site.phoneOffice}</a> · Licensed in NC &amp; VA · Equal Housing Opportunity ⌂<br/>
+    <a href={SITE_BASE + "/"}>greenfieldacresrealty.com</a>
+  </footer>
+
+</body>
+</html>
