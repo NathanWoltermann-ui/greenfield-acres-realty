@@ -1,12 +1,14 @@
 ---
 title: "Aimee Greenfield Becomes a Member of the Institute for Luxury Home Marketing"
 date: 2020-09-30
-description: "Specialized training in the luxury real estate market comes to Greenfield Acres Realty."
+description: "Not all real estate agents are equal — specialized training in the luxury market comes to Greenfield Acres Realty."
 oldUrl: "/aimee%20greenfield.htm"
 ---
 
-Aimee Greenfield is now a member of the **Institute for Luxury Home Marketing**, the premier independent authority in training and designation for real estate agents working in the upper-tier residential market.
+**Not all real estate agents are equal.** Whether you are buying or selling a home, it is essential that you partner with a real estate professional who can meet your needs and understands your lifestyle.
 
-Membership reflects specialized training in pricing, marketing, and negotiating luxury properties — skills that matter in the High Country's estate, view-home, and large-acreage market.
+The **Institute for Luxury Home Marketing** exists to help buyers and sellers of luxury homes find real estate professionals with the knowledge, skills, and expertise to support their individual needs. Institute Members specialize in the luxury home market and have completed extensive training to build additional competencies unique to the upper-tier arena.
 
-For sellers, that means your property is marketed with the tools and network luxury listings deserve. For buyers, it means representation that knows this market's top tier inside and out.
+Members also have access to exclusive market insights and the latest strategies and tools, enabling them to stay on top of changing market conditions and offer effective plans to sell luxury properties. This insight and specialized knowledge makes Institute Members the best agent choice for affluent buyers and sellers of luxury properties.
+
+Aimee Greenfield is now a Member of the Institute — bringing that upper-tier training home to the High Country. Learn more at [luxuryhomemarketing.com](https://www.luxuryhomemarketing.com).

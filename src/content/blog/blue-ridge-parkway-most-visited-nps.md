@@ -12,4 +12,4 @@ For those of us who live along it, that's no surprise — America's favorite dri
 
 Fourteen million people visited last year. A lucky few get to call it home.
 
-[Read the full story →](https://money.yahoo.com/blue-ridge-parkway-one-most-215106867.html)
+[Read the full story — "The Blue Ridge Parkway Is One of the Most-Visited NPS Sites, Here's Where to Camp" by Elizabeth Rhodes →](https://money.yahoo.com/blue-ridge-parkway-one-most-215106867.html)
