@@ -115,138 +115,26 @@ const jsonLd = {
       </div>
     </section>
 
-    <!-- ===== Featured Listings (horizontal scroll) ===== -->
+    <!-- ===== Featured Listings (live IDX widget) ===== -->
     <section class="listings" id="listings">
       <div class="listings__head">
         <p class="section-kicker" data-reveal>Featured properties</p>
         <h2 class="section-title" data-split>Homes worth the drive up the mountain.</h2>
-        <p class="listings__hint" data-reveal>Scroll&nbsp;→&nbsp;&nbsp;Live MLS featured listings — call <a href={`tel:${site.phoneOfficeHref}`}>{site.phoneOffice}</a> for showings.</p>
+        <p class="listings__hint" data-reveal>Live from the High Country MLS — $800k+ across Sparta, Blowing Rock, Boone, Banner Elk &amp; West Jefferson. Call <a href={`tel:${site.phoneOfficeHref}`}>{site.phoneOffice}</a> for showings.</p>
       </div>
 
-      <div class="listings__pin" data-listings-pin>
-        <div class="listings__track" data-listings-track data-featured-track>
-
-          <article class="card">
-            <div class="card__media">
-              <img loading="lazy" src="/assets/listings/eagle-cliff-trail.jpg" alt="Timber mountain home with red metal roof at 745 Eagle Cliff Trail" />
-              <span class="card__tag">Mountain Lodge</span>
-            </div>
-            <div class="card__body">
-              <div class="card__top">
-                <h3>745 Eagle Cliff Trail</h3>
-              </div>
-              <p class="card__loc">Banner Elk, NC</p>
-              <p class="card__inquire"><a href={`tel:${site.phoneOfficeHref}`}>Call for details →</a></p>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card__media">
-              <img loading="lazy" src="/assets/listings/beacon-hill.jpg" alt="Shingle and stone estate at 260 Beacon Hill" />
-              <span class="card__tag">Estate</span>
-            </div>
-            <div class="card__body">
-              <div class="card__top">
-                <h3>260 Beacon Hill</h3>
-              </div>
-              <p class="card__loc">Blowing Rock, NC</p>
-              <p class="card__inquire"><a href={`tel:${site.phoneOfficeHref}`}>Call for details →</a></p>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card__media">
-              <img loading="lazy" src="/assets/listings/stonecrop-lane.jpg" alt="Timber-frame home with long-range mountain views at 153 Stonecrop Lane" />
-              <span class="card__tag">Timber Frame</span>
-            </div>
-            <div class="card__body">
-              <div class="card__top">
-                <h3>153 Stonecrop Lane</h3>
-              </div>
-              <p class="card__loc">Boone, NC</p>
-              <p class="card__inquire"><a href={`tel:${site.phoneOfficeHref}`}>Call for details →</a></p>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card__media">
-              <img loading="lazy" src="/assets/listings/bryan-hollow-road.jpg" alt="Large log home at 904 Bryan Hollow Road" />
-              <span class="card__tag">Log Home</span>
-            </div>
-            <div class="card__body">
-              <div class="card__top">
-                <h3>904 Bryan Hollow Road</h3>
-              </div>
-              <p class="card__loc">Boone, NC</p>
-              <p class="card__inquire"><a href={`tel:${site.phoneOfficeHref}`}>Call for details →</a></p>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card__media">
-              <img loading="lazy" src="/assets/listings/howards-knob-road.jpg" alt="Stone manor home with mountain view at 530 Howards Knob Road" />
-              <span class="card__tag">Stone Manor</span>
-            </div>
-            <div class="card__body">
-              <div class="card__top">
-                <h3>530 Howards Knob Rd.</h3>
-              </div>
-              <p class="card__loc">Boone, NC</p>
-              <p class="card__inquire"><a href={`tel:${site.phoneOfficeHref}`}>Call for details →</a></p>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card__media">
-              <img loading="lazy" src="/assets/listings/joriann-drive.jpg" alt="Stone farmhouse with fenced pasture at 199 Joriann Drive" />
-              <span class="card__tag">Farm &amp; Acreage</span>
-            </div>
-            <div class="card__body">
-              <div class="card__top">
-                <h3>199 Joriann Drive</h3>
-              </div>
-              <p class="card__loc">Crumpler, NC</p>
-              <p class="card__inquire"><a href={`tel:${site.phoneOfficeHref}`}>Call for details →</a></p>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card__media">
-              <img loading="lazy" src="/assets/listings/blackberry-lane.jpg" alt="Craftsman home with stone landscaping at 119 Blackberry Lane" />
-              <span class="card__tag">Craftsman</span>
-            </div>
-            <div class="card__body">
-              <div class="card__top">
-                <h3>119 Blackberry Lane</h3>
-              </div>
-              <p class="card__loc">Boone, NC</p>
-              <p class="card__inquire"><a href={`tel:${site.phoneOfficeHref}`}>Call for details →</a></p>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card__media">
-              <img loading="lazy" src="/assets/listings/glade-valley-road.jpg" alt="Ranch home with Blue Ridge backdrop at 438 Glade Valley Road" />
-              <span class="card__tag">Ranch &amp; Views</span>
-            </div>
-            <div class="card__body">
-              <div class="card__top">
-                <h3>438 Glade Valley Road</h3>
-              </div>
-              <p class="card__loc">Glade Valley, NC</p>
-              <p class="card__inquire"><a href={`tel:${site.phoneOfficeHref}`}>Call for details →</a></p>
-            </div>
-          </article>
-
-          <article class="card card--cta">
-            <div class="card--cta__inner">
-              <h3>Looking for land, a farm, or something off-market?</h3>
-              <p>Aimee’s network across Alleghany, Ashe &amp; Watauga counties surfaces properties before they hit the MLS.</p>
-              <a class="btn btn--solid" href="/land"><span>Explore Land &amp; Acreage</span></a>
-            </div>
-          </article>
-
-        </div>
+      <div class="listings__widget-wrap" data-reveal>
+        <!--
+          IDX Broker listingsCarousel widget (id 165577), created via the Client API —
+          criteria (5 towns, $800k+, active-only) and brand colors are configured on
+          IDX's side, not here. To recreate/adjust, see README "Featured properties widget".
+        -->
+        <script is:inline src="https://greenfieldacresrealty.idxbroker.com/idx/widgets/165577"></script>
+        <noscript>
+          <p class="listings__noscript">
+            <a href={`${site.idxSearch}?pt=1&lp=800000&srt=prd`} target="_blank" rel="noopener">See our current $800k+ listings on the MLS →</a>
+          </p>
+        </noscript>
       </div>
     </section>
 

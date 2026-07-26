@@ -24,15 +24,43 @@ All old `.htm` URLs from the previous site 301-redirect to their new homes
 
 ## How the MLS integration works
 
+### Featured properties widget (homepage)
+
+The homepage "Featured Properties" section embeds an **IDX Broker `listingsCarousel` widget**
+(id **165577**), configured to show **Active, $800k+ listings in Sparta, Blowing Rock, Boone,
+Banner Elk, and West Jefferson**, newest first. IDX serves this data directly — it's their
+sanctioned, MLS-compliant way to show live, cross-agent listings on a client's own site (a
+custom-built card feed would require a separate paid MLS data license — see "Why not custom
+cards?" below). Because it's a live IDX view, sold/pending homes disappear automatically —
+there's nothing to keep in sync.
+
+- **Embed**: a single script tag in [src/pages/index.astro](src/pages/index.astro), `<script src="https://greenfieldacresrealty.idxbroker.com/idx/widgets/165577">`. IDX injects an `<idx-listings-carousel>` element in its place.
+- **Domain-locked**: IDX validates the request's domain against the site registered on Aimee's account (currently `www.greenfieldacresrealty.com`). **The widget will not render on `localhost` or the Netlify preview domain** — this is expected, not a bug (it's the MLS data-security rule that restricts listing data to approved domains). Verify it visually only after the real domain is live, or temporarily add the Netlify domain as an approved/secondary domain in IDX Middleware if you need to test sooner.
+- **To change criteria (towns/price) or reapply colors**: the widget's `PUT /clients/widgets` (create) endpoint works reliably; **`POST /clients/widgets/{id}` (update) currently 500s on IDX's side** regardless of payload — a bug on their end, reported to their support. Until they fix it, the only reliable way to change settings is: `DELETE /clients/widgets/{id}` the old one, then `PUT /clients/widgets` a new one with updated options, then update the script's widget ID in `index.astro`. The exact request used to create widget 165577 (all options, brand colors, `editByHandQuery` city list) is in this session's history — ask Claude to reconstruct it if needed.
+- **Rotation**: `sortOrder: newest` plus the carousel's own auto-scroll (`enableAutoScroll`, 6s) gives continuous movement within a visit; day-to-day reordering (e.g. alternating newest/price-desc) was intended to run from the daily scheduled function once IDX's update endpoint works — currently blocked on their bug above.
+
+### Why not custom-designed cards?
+
+IDX Broker's Client API deliberately does **not** return raw MLS search results for developers to
+render themselves (`/clients/searchquery` needs a Developer Partner "ancillary" key, gated behind
+IDX's partner program; even then, IDX's own docs say cross-account MLS search data currently isn't
+offered via API at all — see `developers.idxbroker.com/getting-mls-data/`). The widget above is the
+fully-compliant, $0 way to get live cross-agent listings on the page. If pixel-perfect custom cards
+matter more than the IDX-styled widget later, the upgrade path is a licensed MLS data feed via a
+vendor like SimplyRETS or Repliers (~$50–100/mo) — ask Claude, the plumbing (`netlify/functions/lib/idx.mts`,
+`/api/featured`, `public/featured.js`, the `/land` page grid) is already built for it; only the
+fetch source would need to change.
+
+### Land page + future custom-cards groundwork
+
 - **`netlify/functions/featured-refresh.mts`** runs **daily** (scheduled function). It calls the
-  IDX Broker API for Aimee's featured listings, keeps only **Active** ones (this is the automatic
-  "is that home still on the market?" check), keeps homes **$800k+** (site policy) and all land,
-  and caches the result in Netlify Blobs.
+  IDX Broker API for Aimee's own featured listings, keeps only **Active** ones, keeps homes
+  **$800k+** and all land, and caches the result in Netlify Blobs.
 - **`/api/featured`** (`netlify/functions/featured.mts`) serves that cache to the browser.
   If the cache is empty it refreshes on the spot; if there's no API key yet it serves
-  [data/featured-fallback.json](data/featured-fallback.json) so the site always looks complete.
-- **`public/featured.js`** renders the cards on the home page (shuffled per visit → "rotating")
-  and the land grid. Every card links to the listing's full IDX detail page.
+  [data/featured-fallback.json](data/featured-fallback.json).
+- **`public/featured.js`** renders cards on the `/land` page grid from that feed. (It no longer
+  drives the homepage — that's the widget above.)
 - The search panel and wizard build IDX results URLs directly (city IDs live in
   [src/data/communities.json](src/data/communities.json)) — those results are always live MLS data.
 

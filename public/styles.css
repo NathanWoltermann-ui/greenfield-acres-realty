@@ -421,6 +421,21 @@ em { font-style: italic; }
   padding: 0 var(--pad) clamp(4rem, 9vh, 6rem);
   width: max-content;
 }
+.listings__widget-wrap {
+  padding: 0 var(--pad) clamp(4rem, 9vh, 6rem);
+  min-height: 420px;
+  display: flex;
+  justify-content: center;
+}
+.listings__noscript {
+  text-align: center;
+  font-size: 0.95rem;
+}
+.listings__noscript a {
+  color: var(--brass);
+  font-weight: 600;
+  border-bottom: 1px solid rgba(176, 138, 79, 0.4);
+}
 .card {
   width: clamp(300px, 38vw, 460px);
   flex-shrink: 0;
